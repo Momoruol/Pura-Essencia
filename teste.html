@@ -5,114 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey</title>
     <link rel="stylesheet" href="./src/style.css" />
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <form id="survey-form">
-        <section for="title">
+        <section>
           <h1 id="title">Teste de Pele</h1>
         </section>
         <section class="info">
           <fieldset>
-            <label id="genre-label"
-              >Gênero: <input name="genre" type="radio" id="Male" value="gen-m" checked />Homem
-              <input name="genre" type="radio"  id="female" value="gen-f" />Mulher
+            <legend>Gênero:</legend>
+            <label>
+              <input
+                name="genre"
+                type="radio"
+                id="male"
+                value="gen-m"
+                checked
+              />
+              Homem
             </label>
-            <label id="name-label">
-              Nome:
-              <input type="text" id="name" placeholder="Digite seu nome" required/>
-            </label>
-            <label id="email-label">
-              Email:
-              <input type="email" id="email" placeholder="Digite seu email" required/>
-            </label>
-            <label id="number-label">
-              Idade:
-              <input type="number" id="number" placeholder="Digite sua idade" min="16"
-              max="99" required/>
-              <hr />
+            <gap></gap>
+            <label>
+              <input name="genre" type="radio" id="female" value="gen-f" />
+              Mulher
             </label>
           </fieldset>
+          <label for="name" id="name-label">
+            Nome:
+            <input
+              type="text"
+              id="name"
+              placeholder="Digite seu nome"
+              required
+            />
+          </label>
+          <label for="email" id="email-label">
+            Email:
+            <input
+              type="email"
+              id="email"
+              placeholder="Digite seu email"
+              required
+            />
+          </label>
+          <label for="number" id="number-label">
+            Idade:
+            <input
+              type="number"
+              id="number"
+              placeholder="Digite sua idade"
+              min="16"
+              max="99"
+              required
+            />
+          </label>
+          <hr />
         </section>
+
         <section id="options">
           <fieldset>
-            Gostariamos de Saber mais sobre sua pele.
-            <p>Qual seu tipo de pele?</p>
-            <select id="dropdown">
-              <option id="form 1" disabled selected>
+            <legend>Gostaríamos de saber mais sobre sua pele.</legend>
+            <label for="skin-type-dropdown">Qual seu tipo de pele?</label>
+            <select id="skin-type-dropdown" required>
+              <option value="" disabled selected>
                 Escolha apenas o que mais se encaixa.
               </option>
-              <option id="form 2">Oleosa</option>
-              <option id="form 3">Sensível</option>
-              <option id="form 4">Normal</option>
-              <option id="form 5">Seca</option>
-              <option id="form 6">Mista</option>
+              <option value="oleosa">Oleosa</option>
+              <option value="sensivel">Sensível</option>
+              <option value="seca">Seca</option>
+              <option value="mista">Mista</option>
             </select>
           </fieldset>
         </section>
+
         <section id="product">
           <fieldset>
-            <label id="types"
-              ><p>Você tem algum problema de pele especifico?
-              <small>(Marque todas que se encaixam)</small></p>
-              <input class="prod" type="checkbox" value="var1" /> Acne<br>
-              <input class="prod" type="checkbox" value="var2"/> Rosácea
-              <br>
-              <input class="prod" type="checkbox" value="var3"/> Eczema<br>
-              <input class="prod" type="checkbox" value="var4"/> Dermatite <br>
-              <input class="prod" type="checkbox" value="var5"/> Melasma<br>
-              <input class="prod" type="checkbox" value="var6"/> Micoses<br>
-              <input class="prod" type="checkbox" value="var6"/> Outras(Expecifique)<br>
-              
+            <legend>
+              Você tem algum problema de pele específico?
+              <small>(Marque todas que se encaixam)</small>
+            </legend>
+            <label>
+              <input class="prod" type="checkbox" value="acne" /> Acne<br />
+              <input class="prod" type="checkbox" value="rosacea" />
+              Rosácea<br />
+              <input class="prod" type="checkbox" value="eczema" /> Eczema<br />
+              <input class="prod" type="checkbox" value="dermatite" />
+              Dermatite<br />
+              <input class="prod" type="checkbox" value="melasma" />
+              Melasma<br />
+              <input class="prod" type="checkbox" value="micoses" />
+              Micoses<br />
+              <input class="prod" type="checkbox" value="outros" /> Outras
+              (Especifique) <br /><br />
               <textarea
-                id="suggestions-camp"
-                placeholder="Digite oque ocorreu com detalhes"
+                id="other-issues"
+                placeholder="Digite o que ocorreu com detalhes"
               ></textarea>
+            </label>
+          </fieldset>
+        </section>
 
-            </label>
-          </fieldset>
-        </section>
-        <section id="suggestions">
+        <section id="allergies">
           <fieldset>
-            <label id="sug">
-              <p id="description">Você tem alguma alergia ou sensibilidade a produtos de Skincare?<br /><br>
-              <textarea
-                id="suggestions-camp"
-                placeholder="Digite todas as suas restrições com produtos"
-              ></textarea>
-            </label>
+            <legend>
+              Você tem alguma alergia ou sensibilidade a produtos de Skincare?
+            </legend>
+            <textarea
+              id="allergy-details"
+              placeholder="Digite todas as suas restrições com produtos"
+            ></textarea>
           </fieldset>
         </section>
-        <section id="suggestions">
-            <fieldset>
-              <label id="sug">
-                <p id="description">Você bebe bastante água durante o dia?<br /><br>
-                    <select name="dropdown" id="drop">
-                        <option value="form geral" disabled selected>Escolha entre sim e não</option>
-                        <option value="form1">Sim</option>
-                        <option value="form2">Não</option>
-                    </select>
-              </label>
-            </fieldset>
-          </section>
-          <section id="suggestions"></section>
-            <fieldset>
-              <label id="sug">
-                <p id="description">Quanto você está disposto a gastar para os cuidados com sua pele?<br /><br>
-                    <select name="dropdown" id="drop">
-                        <option value="form geral" disabled selected>Escolha entre os valores</option>
-                        <option value="form1">Entre R$25 e R$100</option>
-                        <option value="form2">Entre R$100 e R$250</option>
-                        <option value="form3">Entre R$250 e R$500</option>
-                        <option value="form4">Acima de R$500</option>
-                    </select>
-              </label>
-            </fieldset>
-          </section>
+
+        <section id="water-intake">
+          <fieldset>
+            <legend>Você bebe bastante água durante o dia?</legend>
+            <select name="water-dropdown" id="water-dropdown" required>
+              <option value="" disabled selected>
+                Escolha entre sim e não
+              </option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </fieldset>
+        </section>
+
+        <section id="spending">
+          <fieldset>
+            <legend>
+              Quanto você está disposto a gastar para os cuidados com sua pele?
+            </legend>
+            <select name="spending-dropdown" id="spending-dropdown" required>
+              <option value="" disabled selected>
+                Escolha entre os valores
+              </option>
+              <option value="25-100">Entre R$25 e R$100</option>
+              <option value="100-250">Entre R$100 e R$250</option>
+              <option value="250-500">Entre R$250 e R$500</option>
+              <option value="500+">Acima de R$500</option>
+            </select>
+          </fieldset>
+        </section>
+
         <section id="submit-section">
-          <button type="submit" id="submit" class="btn" value="submit">Lançar Teste
+          <button type="submit" id="submit" class="btn">Lançar Teste</button>
         </section>
       </form>
     </div>
+
+    <div class="loader-container hidden" id="loader">
+      <div class="loader-dots">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+      <div class="loading-text">Fazendo a melhor SkinCare para você...</div>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>

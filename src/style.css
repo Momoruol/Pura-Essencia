@@ -1,11 +1,12 @@
 #title{
     font-family: sans-serif;
   }
+
 body{
     color: white;
     font-family: sans-serif;
     text-align: start;
-    font-size: 24px;
+    font-size: 25px;
     background-color: #3f7442;
   }
 label{
@@ -17,6 +18,12 @@ label{
     border-radius: 20px;
     padding: 15px;
   }
+
+select{
+  height: 2rem;
+  border-radius: 10px;
+}
+
 hr{
     margin-top: 30px;
     background-color: ghostwhite;
@@ -28,7 +35,10 @@ hr{
   }
 .btn{
     width: 100%;
-    height: 25px;
+    height: 35px;
+    border-radius: 10px;
+    border: solid;
+    border-color: #3f7442;
   }
 fieldset{
     border: 0;
@@ -43,6 +53,9 @@ h1{
 #name{
     width: 50%;
     height: 25px;
+    border-radius: 10px;
+    border: solid;
+    border-color: #3f7442;
 }
 
 #email-label{
@@ -52,6 +65,9 @@ h1{
 #email{
     width: 50%;
     height: 25px;
+    border-radius: 10px;
+    border: solid;
+    border-color: #3f7442;
 }
 
 #number-label{
@@ -61,9 +77,90 @@ h1{
 #number{
     width: 50%;
     height: 25px;
+    border-radius: 10px;
+    border: solid;
+    border-color: #3f7442;
 }
 
 textarea{
     width: 400px;
     height: 100px;
   }
+
+  .loader-container {
+    display: none; /* Loader oculto inicialmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loader-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.loader-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    border-radius: 50%;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+.loader-dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.loader-dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Animação de pulo */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Barra de progresso */
+.progress-bar {
+    width: 80%;
+    height: 10px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: #3498db;
+    border-radius: 5px;
+    animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Texto de carregamento */
+.loading-text {
+    color: #ffffff;
+    margin-top: 15px;
+    font-size: 1.5em;
+    text-align: center;
+}
